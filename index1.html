@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Eleitores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        input[type="password"], input[type="text"] {
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .signup-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .signup-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Portal dos Usuários</h2>
+    <form id="loginForm">
+        <label for="login">Login:</label><br>
+        <input type="text" id="login" name="login" required><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha" required oninput="transformarSenha(this.value)"><br>
+
+        <input type="submit" value="Entrar">
+    </form>
+
+    <div class="signup-link">
+        <p>Não possui cadastro? <a href="index2.html">Clique aqui</a> para se cadastrar.</p>
+    </div>
+
+    <script>
+        function transformarSenha(valor) {
+            const senhaAsteriscos = '*'.repeat(valor.length);
+            document.getElementById('senha').value = senhaAsteriscos;
+        }
+    </script>
+</body>
+</html>
